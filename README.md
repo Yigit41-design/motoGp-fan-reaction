@@ -1,76 +1,66 @@
-# 🏆 Best Football Players by League & Skill Areas
+# 🏍️ **MotoGP Fan Reaction Analysis**
+
+---
 
 ## 🎯 Motivation
-Football is actually a detailed game where individual performance not only depends on goals — it has many dimensions.  
-In my project, I will explore some of them and identify players who excel the most in these areas across the top five leagues: **Premier League, La Liga, Serie A, Ligue 1, and Bundesliga.**
+
+I love watching MotoGP in my free time and I follow it closely.
+I’ve noticed that there is a strong sense of nationalism among MotoGP fans — they often admire and support the riders who have been the most successful representatives of their country.
+However, every nation also has riders who are less famous or less successful, and these riders do not receive the same level of attention.
+
+In this project, I want to test whether MotoGP fans tend to show more interest in the most successful riders who symbolize their nation compared to less-known riders from the same country.
+
+To verify this idea with real data, I will analyze **Google search trends** on race days to see whether there is a significant increase in searches for a rider from their home country after winning a race — especially if the rider is already popular and successful.
+Additionally, I’ll explore whether factors such as **win margin**, **circuit difficulty**, or **previous wins on the same track** have any effect on the level of search interest after a race.
 
 ---
 
-## 📊 Data Source
-The dataset will be obtained from **[FBref](https://fbref.com)**, which provides publicly available player-level football statistics.  
-Data will be collected **manually** by copying relevant tables (*Standard Stats, Shooting, Passing, Goal and Shot Creation, Defensive Actions, Possession, and Miscellaneous Stats*) directly from FBref pages into Excel, and then saving them as CSV files.
+## 🏁 Data Source
+
+This project will use **publicly available data** from two main sources:
+
+### 📄 MotoGP Race Data
+
+* Race results (dates, winners, rider names, nationalities, circuit names) will be collected manually from *Wikipedia* and *motogp.com*.
+* Additional race-level details such as **win margin** (time difference between first and second place), **circuit difficulty**, and **number of previous wins on that circuit** will be included to analyze how race characteristics influence public attention.
+
+### 🌐 Google Search Trends
+
+* Public Google Trends data will be collected using the **Pytrends** Python library.
+* For each race, search interest for the winning rider’s name and for **“MotoGP”** will be collected from the rider’s home country to measure changes in public attention before and after each race.
+
+> 💾 The final dataset will contain around **10–15 features**, combining race performance details, rider popularity metrics (career wins, championships, podium finishes, years active), and Google Trends statistics (before/after interest, trend difference, and relative increase).
+
+All data sources are **publicly available**, and Pytrends is used only to access Google’s open trend data automatically.
 
 ---
 
-## ⚙️ Metrics Used
+## 📊 Data Analysis
 
-| Category | Metrics |
-|-----------|----------|
-| **Finishing** | Non-penalty Goals, Shots on Target %, (Goals − npxG) |
-| **Chance Creation** | Key Passes, SCA (Shot Creating Actions), Passes into Penalty Area |
-| **Take-on** | Dribbles Completed, Dribble Success %, Carries into Final Third |
-| **Playmaking** | Progressive Passes, Passes into Final Third, xA |
-| **Ground Defence** | Tackles Won, Interceptions, Blocks, Pressure Success % |
-| **Aerial Duels** | Aerials Won, Aerial Win %, Headed Shots |
+The analysis will focus on understanding how a rider’s **popularity** and **race performance** influence public attention after MotoGP races.
 
----
+### Key Analysis Goals:
 
-## 🧮 Data Analysis
-
-### 1️⃣ Data Collection  
-Copying player-level tables from FBref into Excel and exporting as CSV.
-
-### 2️⃣ Data Cleaning & Integration  
-Combining CSV files (shooting, passing, etc.) into one master dataset and filtering players who played ≥ 1000 minutes.
-
-### 3️⃣ Normalization  
-Converting all metrics to “per 90 minutes” and scaling them using **z-score normalization** (so all values are comparable).
-
-### 4️⃣ Scoring & Ranking  
-Creating a composite score for each skill area and ranking players within each league.
-
-### 5️⃣ Visualization  
-Plotting **radar charts** and **bar charts** to show top players per skill area.
+* Compare **Google search interest** before and after each race.
+* Identify if **popular riders** receive more post-race attention than less-popular ones.
+* Evaluate how **win margin**, **circuit difficulty**, and **previous wins** affect search interest changes.
+* Visualize which factors — **rider success**, **popularity**, or **race characteristics** — most influence public attention.
 
 ---
 
-## 📈 Expected Findings
-- Players who have high take-on and chance-creation stats are mostly **wingers** or **offensive midfielders**.  
-- **Center-backs** would mostly be proficient in **ground defence** and **aerial duels**.  
-- **Central midfielders** are expected to dominate the **playmaking** category.
+## 🏆 Expected Findings
 
----
-
-## 🏁 Final Output
-**Top 50 most proficient players** in each category:
-- Finishing  
-- Chance Creation  
-- Playmaking  
-- Take-on  
-- Ground Defence  
-- Aerial Duels  
+* 🟡 Popular riders (with more wins, podiums, or championships) are expected to show a **higher increase in Google search interest** after winning compared to less-popular riders.
+* 🔵 The **larger the win margin**, the greater the public attention — dominant victories create stronger fan reactions.
+* 🟡 Winning on a **difficult circuit** may lead to higher interest, as fans perceive these wins as more impressive.
 
 ---
 
 ## ⚠️ Limitations
-- Data is updated every week on FBref, so player stats could slightly change over time.
+
+* Google Trends data shows **relative interest**, not absolute search counts.
+* **Circuit difficulty** and **rider popularity** are simplified metrics and may not reflect full real-world perceptions.
+* Dataset covers only **recent seasons (2015–2025)**, so long-term fan behavior may not be captured.
 
 ---
 
-## 🔮 Future Updates
-- Add more leagues (e.g., Süper Lig, MLS).  
-- Automate data extraction using Python (`pandas.read_html`).  
-
----
-
-💬 *“The beauty of football lies not only in goals, but in the countless skills that build them.”* ⚽
