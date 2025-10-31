@@ -26,8 +26,8 @@ This project will use **publicly available data** from two main sources:
 
 ###  Google Search Trends
 
-*🟢 Public Google Trends data will be collected using the **Pytrends** Python library.
-*🟡 For each race, search interest for the winning rider’s name and more information for **“MotoGP”** will be collected from the rider’s home country to measure changes in public attention before and after each race.
+* 🟢 Public Google Trends data will be collected using the **Pytrends** Python library.
+* 🟡 For each race, search interest for the winning rider’s name and more information for **“MotoGP”** will be collected from the rider’s home country to measure changes in public attention before and after each race.
 
 > 💾 The final dataset will contain around **10–15 features**, combining race performance details, rider popularity metrics (career wins, championships, podium finishes, years active), and Google Trends statistics (before/after interest, trend difference, and relative increase).
 
