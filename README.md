@@ -26,8 +26,8 @@ This project will use **publicly available data** from two main sources:
 
 ###  Google Search Trends
 
-🟢 Public Google Trends data will be collected using the **Pytrends** Python library.
-🟡 For each race, search interest for the winning rider’s name and more information for **“MotoGP”** will be collected from the rider’s home country to measure changes in public attention before and after each race.
+*🟢 Public Google Trends data will be collected using the **Pytrends** Python library.
+*🟡 For each race, search interest for the winning rider’s name and more information for **“MotoGP”** will be collected from the rider’s home country to measure changes in public attention before and after each race.
 
 > 💾 The final dataset will contain around **10–15 features**, combining race performance details, rider popularity metrics (career wins, championships, podium finishes, years active), and Google Trends statistics (before/after interest, trend difference, and relative increase).
 
@@ -39,10 +39,10 @@ All data sources are **publicly available**, and Pytrends is used only to access
 
 The analysis will focus on understanding how a rider’s **popularity** and **race performance** influence public attention after MotoGP races.
 
-🟡 Compare **Google search interest** before and after each race.
-🟢 Identify if **popular riders** receive more post-race attention than less-popular ones.
-🟡 Evaluate how **win margin**, **circuit difficulty**, and **previous wins** affect search interest changes.
-🟢 Visualize which factors — **rider success**, **popularity**, or **race characteristics** — most influence public attention.
+* 🟡 Compare **Google search interest** before and after each race.
+* 🟢 Identify if **popular riders** receive more post-race attention than less-popular ones.
+* 🟡 Evaluate how **win margin**, **circuit difficulty**, and **previous wins** affect search interest changes.
+* 🟢 Visualize which factors — **rider success**, **popularity**, or **race characteristics** — most influence public attention.
 
 ---
 
@@ -56,8 +56,8 @@ The analysis will focus on understanding how a rider’s **popularity** and **ra
 
 ### Limitations
 
-🟢 Google Trends data shows **relative interest**, not absolute search counts.
-🟡 **Circuit difficulty** and **rider popularity** are simplified metrics and may not reflect full real-world perceptions.
-🟢 Dataset covers only **recent seasons (2015–2025)**, so long-term fan behavior may not be captured.
+* 🟢 Google Trends data shows **relative interest**, not absolute search counts
+* 🟡 **Circuit difficulty** and **rider popularity** are simplified metrics and may not reflect full real-world perceptions.
+* 🟢 Dataset covers only **recent seasons (2015–2025)**, so long-term fan behavior may not be captured.
 
 ---
