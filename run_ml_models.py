@@ -1,42 +1,42 @@
 """
-MotoGP ML Modellerini Çalıştır
-Bu script notebook'u Python script olarak çalıştırır
+Run MotoGP ML Models
+This script runs the notebook as a Python script
 """
 import json
 import subprocess
 import sys
 
 def run_notebook_cells():
-    """Notebook hücrelerini sırayla çalıştır"""
+    """Run notebook cells sequentially"""
     
-    # Notebook'u oku
+    # Read the notebook
     with open('ml_models_motogp.ipynb', 'r', encoding='utf-8') as f:
         notebook = json.load(f)
     
-    print("🚀 MotoGP ML Modelleri çalıştırılıyor...\n")
+    print("🚀 Running MotoGP ML Models...\n")
     
-    # Her hücreyi çalıştır
+    # Execute each cell
     for i, cell in enumerate(notebook['cells']):
         if cell['cell_type'] == 'code':
             source = ''.join(cell['source'])
             
-            # Markdown hücrelerini atla
+            # Skip markdown cells
             if source.strip().startswith('#'):
                 continue
             
             print(f"\n{'='*60}")
-            print(f"Hücre {i+1} çalıştırılıyor...")
+            print(f"Running cell {i+1}...")
             print(f"{'='*60}\n")
             
-            # Hücreyi çalıştır
+            # Execute the cell
             try:
                 exec(source, globals())
             except Exception as e:
-                print(f"❌ Hata: {e}")
-                print("Devam ediliyor...\n")
+                print(f"❌ Error: {e}")
+                print("Continuing...\n")
                 continue
     
-    print("\n✅ Tüm hücreler çalıştırıldı!")
+    print("\n✅ All cells executed!")
 
 if __name__ == "__main__":
     run_notebook_cells()
